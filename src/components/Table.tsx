@@ -27,12 +27,8 @@ import { changeRowsPerPageHandler } from "../features/pages/rowsPerPageSlice";
 const BasicTable = ({ rows }: BasicTableProps) => {
   const page = useAppSelector((state) => state.page.page);
   const rowsPerPage = useAppSelector((state) => state.rowsPerPage.rowsPerPage);
+  const totalRows = useAppSelector((state) => state.totalRows.totalRows);
   const dispatch = useAppDispatch();
-
-  // To avoid the undefined in the rowsLength
-  const rowsLength = rows?.length || 0;
-
-  // Avoid a layout jump when reaching the last page with empty rows.
 
   const handleChangePage = (
     event: React.MouseEvent<HTMLButtonElement> | null,
@@ -87,8 +83,15 @@ const BasicTable = ({ rows }: BasicTableProps) => {
           <TableFooter>
             <TableRow>
               <TablePagination
-                rowsPerPageOptions={[5, 10, 25, { label: "All", value: -1 }]}
-                count={rowsLength}
+                rowsPerPageOptions={[
+                  5,
+                  10,
+                  25,
+                  50,
+                  100,
+                  { label: "All", value: -1 },
+                ]}
+                count={totalRows}
                 colSpan={12}
                 rowsPerPage={rowsPerPage}
                 page={page}

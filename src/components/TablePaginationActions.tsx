@@ -40,7 +40,7 @@ const TablePaginationActions = (props: TablePaginationActionsProps) => {
   };
 
   return (
-    <Box sx={{ display: "flex", justifyContent: "right" }}>
+    <Box sx={{ display: "flex" }}>
       <IconButton
         onClick={handleFirstPageButtonClick}
         disabled={page === 0}
