@@ -13,13 +13,13 @@ import {
 } from "@mui/material";
 
 // Test -------------------------- Importing the styles / other components ----------------
-import { BasicTableProps } from "../types/BasicTableProps.type";
+import { BasicTableProps } from "../../types/BasicTableProps.type";
 import StyledTableCell from "./StyledTableCell";
 import StyledTableRow from "./StyledTableRow";
 import TablePaginationActions from "./TablePaginationActions";
-import { useAppSelector, useAppDispatch } from "../app/hooks";
-import { changePageHandler } from "../features/pages/pageSlice";
-import { changeRowsPerPageHandler } from "../features/pages/rowsPerPageSlice";
+import { useAppSelector, useAppDispatch } from "../../app/hooks";
+import { changePageHandler } from "../../features/pages/pageSlice";
+import { changeRowsPerPageHandler } from "../../features/pages/rowsPerPageSlice";
 
 // Test -------------------------- Structure of Props ----------------------------------
 

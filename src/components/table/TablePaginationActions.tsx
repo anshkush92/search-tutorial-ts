@@ -8,7 +8,7 @@ import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import LastPageIcon from "@mui/icons-material/LastPage";
 
 // Test -------------------------- Structure of Props ----------------------------------
-import { TablePaginationActionsProps } from "../types/TablePaginationAction.type";
+import { TablePaginationActionsProps } from "../../types/TablePaginationAction.type";
 
 // Test -------------------------- The current component ----------------------------------
 const TablePaginationActions = (props: TablePaginationActionsProps) => {

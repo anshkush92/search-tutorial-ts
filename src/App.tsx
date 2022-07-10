@@ -1,4 +1,4 @@
-import BasicTable from "./components/Table";
+import BasicTable from "./components/table/Table";
 import useFakeData from "./hooks/useFakeData";
 
 const App = () => {
