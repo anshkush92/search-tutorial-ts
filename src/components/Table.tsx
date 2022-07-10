@@ -1,5 +1,4 @@
 // Test -------------------------- Importing the Packages ---------------------------------
-import React, { useState } from "react";
 import {
   Paper,
   Table,
@@ -20,15 +19,15 @@ import StyledTableRow from "./StyledTableRow";
 import TablePaginationActions from "./TablePaginationActions";
 import { useAppSelector, useAppDispatch } from "../app/hooks";
 import { changePageHandler } from "../features/pages/pageSlice";
+import { changeRowsPerPageHandler } from "../features/pages/rowsPerPageSlice";
 
 // Test -------------------------- Structure of Props ----------------------------------
 
 // Test -------------------------- The current component ----------------------------------
 const BasicTable = ({ rows }: BasicTableProps) => {
   const page = useAppSelector((state) => state.page.page);
+  const rowsPerPage = useAppSelector((state) => state.rowsPerPage.rowsPerPage);
   const dispatch = useAppDispatch();
-
-  const [rowsPerPage, setRowsPerPage] = useState(5);
 
   // To avoid the undefined in the rowsLength
   const rowsLength = rows?.length || 0;
@@ -45,7 +44,7 @@ const BasicTable = ({ rows }: BasicTableProps) => {
   const handleChangeRowsPerPage = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setRowsPerPage(parseInt(event.target.value, 10));
+    dispatch(changeRowsPerPageHandler(parseInt(event.target.value)));
     dispatch(changePageHandler(0));
   };
 
