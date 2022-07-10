@@ -1,3 +1,5 @@
 - [FakerJS](https://www.npmjs.com/package/@faker-js/faker)
 - [Format Date in JS](https://www.freecodecamp.org/news/how-to-format-dates-in-javascript/)
 - [Material UI Table](https://mui.com/material-ui/react-table/#basic-table)
+- [Material UI Table Pagination](https://mui.com/material-ui/react-table/#custom-pagination-actions)
+- [Material UI Theme Customization](https://mui.com/material-ui/react-table/#customization)

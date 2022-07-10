@@ -1,6 +1,6 @@
 import { UserDataType } from "./UserDataType.type";
 
 export type BasicTableProps = {
-  userData?: UserDataType[];
+  rows?: UserDataType[];
   children?: React.ReactNode;
 };

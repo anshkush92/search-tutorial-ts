@@ -9,7 +9,7 @@ const App = () => {
   const generateFakeData = async () => {
     let tempData: UserDataType[] = [];
 
-    for (let i = 1; i <= 10; i++) {
+    for (let i = 1; i <= 26; i++) {
       const user = {
         name: faker.name.findName(),
         email: faker.internet.email(),
@@ -29,7 +29,7 @@ const App = () => {
 
   return (
     <div>
-      <BasicTable userData={userData}></BasicTable>
+      <BasicTable rows={userData}></BasicTable>
     </div>
   );
 };
