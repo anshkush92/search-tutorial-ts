@@ -1,4 +1,5 @@
 import { faker } from "@faker-js/faker";
+import BasicTable from "./components/Table";
 
 // Table Should be made of
 // Name, DOB, Phone number ,Gender, Avatar, country
@@ -21,6 +22,8 @@ const App = () => {
         <img src={avatar} alt={randomName}></img>
       </div>
       <div>{country}</div>
+
+      <BasicTable></BasicTable>
     </div>
   );
 };
