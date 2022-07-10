@@ -3,7 +3,6 @@ import {
   Paper,
   Table,
   TableBody,
-  TableCell,
   TableContainer,
   TableHead,
   TableRow,
@@ -13,6 +12,8 @@ import {
 
 // Test -------------------------- Importing the styles / other components ----------------
 import { BasicTableProps } from "../types/BasicTableProps.type";
+import StyledTableCell from "./StyledTableCell";
+import StyledTableRow from "./StyledTableRow";
 
 // Test -------------------------- Structure of Props ----------------------------------
 
@@ -24,27 +25,27 @@ const BasicTable = ({ userData }: BasicTableProps) => {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>Name</TableCell>
-              <TableCell>Email</TableCell>
-              <TableCell>Date of Birth</TableCell>
-              <TableCell>Phone</TableCell>
-              <TableCell>Country</TableCell>
-              <TableCell>Avatar</TableCell>
+              <StyledTableCell>Name</StyledTableCell>
+              <StyledTableCell>Email</StyledTableCell>
+              <StyledTableCell>Date of Birth</StyledTableCell>
+              <StyledTableCell>Phone</StyledTableCell>
+              <StyledTableCell>Country</StyledTableCell>
+              <StyledTableCell>Avatar</StyledTableCell>
             </TableRow>
           </TableHead>
 
           <TableBody>
             {userData?.map((user) => (
-              <TableRow key={user.name}>
-                <TableCell>{user.name}</TableCell>
-                <TableCell>{user.email}</TableCell>
-                <TableCell>{user.dob}</TableCell>
-                <TableCell>{user.phone}</TableCell>
-                <TableCell>{user.country}</TableCell>
-                <TableCell>
+              <StyledTableRow key={user.name}>
+                <StyledTableCell>{user.name}</StyledTableCell>
+                <StyledTableCell>{user.email}</StyledTableCell>
+                <StyledTableCell>{user.dob}</StyledTableCell>
+                <StyledTableCell>{user.phone}</StyledTableCell>
+                <StyledTableCell>{user.country}</StyledTableCell>
+                <StyledTableCell>
                   <Avatar src={user.avatar} alt={user.name}></Avatar>
-                </TableCell>
-              </TableRow>
+                </StyledTableCell>
+              </StyledTableRow>
             ))}
           </TableBody>
         </Table>
