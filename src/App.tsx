@@ -1,29 +1,35 @@
 import { faker } from "@faker-js/faker";
 import BasicTable from "./components/Table";
-
-// Table Should be made of
-// Name, DOB, Phone number ,Gender, Avatar, country
+import { useState } from "react";
+import { UserDataType } from "./types/UserDataType.type";
 
 const App = () => {
-  const randomName = faker.name.findName();
-  const randomEmail = faker.internet.email();
-  const dob = faker.date.birthdate().toLocaleDateString();
-  const gender = faker.name.gender(true);
-  const avatar = faker.internet.avatar();
-  const country = faker.address.country();
+  const [userData, setUserData] = useState<UserDataType[]>([]);
+
+  const generateFakeData = async () => {
+    let tempData: UserDataType[] = [];
+
+    for (let i = 1; i <= 2; i++) {
+      const user = {
+        name: faker.name.findName(),
+        email: faker.internet.email(),
+        dob: faker.date.birthdate().toLocaleDateString(),
+        gender: faker.name.gender(true),
+        avatar: faker.internet.avatar(),
+        country: faker.address.country(),
+      };
+      tempData.push(user);
+    }
+    setUserData(tempData);
+  };
+
+  if (userData.length === 0) generateFakeData();
+
+  console.log(userData);
 
   return (
     <div>
-      <div>{randomName}</div>
-      <div>{randomEmail}</div>
-      <div>{dob}</div>
-      <div>{gender}</div>
-      <div>
-        <img src={avatar} alt={randomName}></img>
-      </div>
-      <div>{country}</div>
-
-      <BasicTable></BasicTable>
+      <BasicTable userData={userData}></BasicTable>
     </div>
   );
 };

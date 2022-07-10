@@ -8,48 +8,44 @@ import {
   TableHead,
   TableRow,
   Box,
+  Avatar,
 } from "@mui/material";
 
 // Test -------------------------- Importing the styles / other components ----------------
+import { BasicTableProps } from "../types/BasicTableProps.type";
 
 // Test -------------------------- Structure of Props ----------------------------------
 
 // Test -------------------------- The current component ----------------------------------
-const BasicTable = () => {
+const BasicTable = ({ userData }: BasicTableProps) => {
   return (
     <Box width="90%" m="auto">
       <TableContainer component={Paper}>
         <Table>
           <TableHead>
-            <TableCell>Name</TableCell>
-            <TableCell>Email</TableCell>
-            <TableCell>Date of Birth</TableCell>
-            <TableCell>Gender</TableCell>
-            <TableCell>Country</TableCell>
-            <TableCell>Avatar</TableCell>
+            <TableRow>
+              <TableCell>Name</TableCell>
+              <TableCell>Email</TableCell>
+              <TableCell>Date of Birth</TableCell>
+              <TableCell>Gender</TableCell>
+              <TableCell>Country</TableCell>
+              <TableCell>Avatar</TableCell>
+            </TableRow>
           </TableHead>
 
           <TableBody>
-            <TableRow>
-              <TableCell component="th" scope="row">
-                Hello
-              </TableCell>
-              <TableCell component="th" scope="row">
-                Hello
-              </TableCell>
-              <TableCell component="th" scope="row">
-                Hello
-              </TableCell>
-              <TableCell component="th" scope="row">
-                Hello
-              </TableCell>
-              <TableCell component="th" scope="row">
-                Hello
-              </TableCell>
-              <TableCell component="th" scope="row">
-                Hello
-              </TableCell>
-            </TableRow>
+            {userData?.map((user) => (
+              <TableRow key={user.name}>
+                <TableCell>{user.name}</TableCell>
+                <TableCell>{user.email}</TableCell>
+                <TableCell>{user.dob}</TableCell>
+                <TableCell>{user.gender}</TableCell>
+                <TableCell>{user.country}</TableCell>
+                <TableCell>
+                  <Avatar src={user.avatar} alt={user.name}></Avatar>
+                </TableCell>
+              </TableRow>
+            ))}
           </TableBody>
         </Table>
       </TableContainer>
