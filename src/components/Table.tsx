@@ -18,12 +18,16 @@ import { BasicTableProps } from "../types/BasicTableProps.type";
 import StyledTableCell from "./StyledTableCell";
 import StyledTableRow from "./StyledTableRow";
 import TablePaginationActions from "./TablePaginationActions";
+import { useAppSelector, useAppDispatch } from "../app/hooks";
+import { changePageHandler } from "../features/pages/pageSlice";
 
 // Test -------------------------- Structure of Props ----------------------------------
 
 // Test -------------------------- The current component ----------------------------------
 const BasicTable = ({ rows }: BasicTableProps) => {
-  const [page, setPage] = useState(0);
+  const page = useAppSelector((state) => state.page.page);
+  const dispatch = useAppDispatch();
+
   const [rowsPerPage, setRowsPerPage] = useState(5);
 
   // To avoid the undefined in the rowsLength
@@ -35,14 +39,14 @@ const BasicTable = ({ rows }: BasicTableProps) => {
     event: React.MouseEvent<HTMLButtonElement> | null,
     newPage: number
   ) => {
-    setPage(newPage);
+    dispatch(changePageHandler(newPage));
   };
 
   const handleChangeRowsPerPage = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setRowsPerPage(parseInt(event.target.value, 10));
-    setPage(0);
+    dispatch(changePageHandler(0));
   };
 
   return (
