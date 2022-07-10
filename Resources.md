@@ -1,0 +1,2 @@
+- [FakerJS](https://www.npmjs.com/package/@faker-js/faker)
+- [Format Date in JS](https://www.freecodecamp.org/news/how-to-format-dates-in-javascript/)
