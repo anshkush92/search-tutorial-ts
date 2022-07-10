@@ -27,7 +27,7 @@ const BasicTable = ({ userData }: BasicTableProps) => {
               <TableCell>Name</TableCell>
               <TableCell>Email</TableCell>
               <TableCell>Date of Birth</TableCell>
-              <TableCell>Gender</TableCell>
+              <TableCell>Phone</TableCell>
               <TableCell>Country</TableCell>
               <TableCell>Avatar</TableCell>
             </TableRow>
@@ -39,7 +39,7 @@ const BasicTable = ({ userData }: BasicTableProps) => {
                 <TableCell>{user.name}</TableCell>
                 <TableCell>{user.email}</TableCell>
                 <TableCell>{user.dob}</TableCell>
-                <TableCell>{user.gender}</TableCell>
+                <TableCell>{user.phone}</TableCell>
                 <TableCell>{user.country}</TableCell>
                 <TableCell>
                   <Avatar src={user.avatar} alt={user.name}></Avatar>

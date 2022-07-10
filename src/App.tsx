@@ -9,12 +9,12 @@ const App = () => {
   const generateFakeData = async () => {
     let tempData: UserDataType[] = [];
 
-    for (let i = 1; i <= 2; i++) {
+    for (let i = 1; i <= 10; i++) {
       const user = {
         name: faker.name.findName(),
         email: faker.internet.email(),
         dob: faker.date.birthdate().toLocaleDateString(),
-        gender: faker.name.gender(true),
+        phone: faker.phone.number("###-####-###"),
         avatar: faker.internet.avatar(),
         country: faker.address.country(),
       };
