@@ -1,46 +1,31 @@
-# Getting Started with Create React App
+## Inspiration
+[![Netlify Status](https://api.netlify.com/api/v1/badges/201cf286-ddce-4763-9fc6-8028d7c0d95f/deploy-status)](https://app.netlify.com/sites/search-table-material-ui-tutorial/deploys)
+This site was made to learn about the searching in the React JS from [this Video](https://www.youtube.com/watch?v=MY6ZZIn93V8&list=PLj-4DlPRT48nfYgDK00oTjlDF4O0ZZyG8&index=30) , but the UI was too simple in that, so I thought of learning some new components of the Material UI like
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
+ - Table
+ - Data Field
+ - Table Pagination
+ - Text Field
+and many more .....
+In this whole process of learning, I also used 
+ - **React Toastify**
+ - **Redux Toolkit** 
+ - **Custom Hooks**
+ To gain more knowledge about them and how to effectively use them in the Code
+I have tried my best to **refactor** the code, but it's not that I know everything, so if  there's anything that you feel is wrong, then do feel free to open an Issue 
 
-## Available Scripts
+# Resources Used
+You can checkout the [Resources.md](https://github.com/anshkush92college/search-tutorial-ts/blob/done/Resources.md) for using the Resources that I used to make this website 
+ 
 
-In the project directory, you can run:
+# Tech Stack
+ 1. [React Js](https://reactjs.org/docs/getting-started.html)
+ 2. [Faker](https://fakerjs.dev/guide/#browser) 
+ 3. [React Toastify](https://www.npmjs.com/package/react-toastify)
+ 4. [Material UI](https://mui.com/material-ui/react-autocomplete/)
+ 5. [Redux](https://redux-toolkit.js.org/) 
+ 6. [TypeScript](https://www.typescriptlang.org/)
+ 7. [Custom Hooks](https://reactjs.org/docs/hooks-custom.html) 
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Acknowledgement
+This Readme file is made using [StackEdit](https://stackedit.io/app#)
