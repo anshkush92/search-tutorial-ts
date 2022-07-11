@@ -5,3 +5,4 @@
 - [Material UI Theme Customization](https://mui.com/material-ui/react-table/#customization)
 - [Dark / Light Mode](https://mui.com/material-ui/customization/dark-mode/#main-content)
 - [Change Text Field Input Colors](https://stackoverflow.com/questions/50228108/change-textfield-font-color-in-mui)
+- [Material UI TextField](https://mui.com/material-ui/react-text-field/#inputs)
