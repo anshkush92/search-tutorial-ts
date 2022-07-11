@@ -1,5 +1,6 @@
 // Test -------------------------- Importing the Packages ---------------------------------
 import { useState } from "react";
+import { toast } from "react-toastify";
 import { TextField, Button, Box } from "@mui/material";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import RemoveOutlinedIcon from "@mui/icons-material/RemoveOutlined";
@@ -18,6 +19,16 @@ const ChangeTotalRows = () => {
   const [changeBy, setChangeBy] = useState<string>("0");
   const dispatch = useAppDispatch();
 
+  const increaseHandler = () => {
+    toast("Increased Rows");
+    dispatch(increaseRows(parseInt(changeBy)));
+  };
+
+  const decreaseHandler = () => {
+    toast("Decreased Rows");
+    dispatch(decreaseRows(parseInt(changeBy)));
+  };
+
   return (
     <Box
       sx={{
@@ -32,7 +43,7 @@ const ChangeTotalRows = () => {
       <Button
         variant="outlined"
         disabled={isNaN(parseInt(changeBy))}
-        onClick={() => dispatch(decreaseRows(parseInt(changeBy)))}
+        onClick={decreaseHandler}
         startIcon={<RemoveOutlinedIcon></RemoveOutlinedIcon>}
       >
         Decrease
@@ -47,7 +58,7 @@ const ChangeTotalRows = () => {
       <Button
         variant="outlined"
         disabled={isNaN(parseInt(changeBy))}
-        onClick={() => dispatch(increaseRows(parseInt(changeBy)))}
+        onClick={increaseHandler}
         endIcon={<AddOutlinedIcon></AddOutlinedIcon>}
       >
         Increase
