@@ -10,7 +10,6 @@ import { useAppDispatch } from "../../app/hooks";
 import {
   increaseRows,
   decreaseRows,
-  previousRows,
 } from "../../features/pages/totalRowsSlice";
 
 // Test -------------------------- Structure of Props ----------------------------------
@@ -22,13 +21,11 @@ const ChangeTotalRows = () => {
 
   const increaseHandler = () => {
     toast.success("Increased Rows");
-    dispatch(previousRows());
     dispatch(increaseRows(parseInt(changeBy)));
   };
 
   const decreaseHandler = () => {
     toast.success("Decreased Rows");
-    dispatch(previousRows());
     dispatch(decreaseRows(parseInt(changeBy)));
   };
 
