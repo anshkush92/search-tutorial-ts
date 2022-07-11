@@ -16,15 +16,13 @@ const SearchBar = () => {
 
   const formSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    toast("Form Submitted");
+    toast("World cleared after pressing Enter");
     dispatch(setWord(""));
   };
 
   const inputWordHanlder = (event: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(setWord(event.target.value));
   };
-
-  console.log(word);
 
   return (
     <Box sx={{ flex: 0.4 }}>

@@ -13,21 +13,27 @@ import {
 } from "@mui/material";
 
 // Test -------------------------- Importing the styles / other components ----------------
-import { BasicTableProps } from "../../types/BasicTableProps.type";
 import StyledTableCell from "./StyledTableCell";
 import StyledTableRow from "./StyledTableRow";
 import TablePaginationActions from "./TablePaginationActions";
+
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import { changePageHandler } from "../../features/pages/pageSlice";
 import { changeRowsPerPageHandler } from "../../features/pages/rowsPerPageSlice";
 
 // Test -------------------------- Structure of Props ----------------------------------
+import { BasicTableProps } from "../../types/BasicTableProps.type";
 
 // Test -------------------------- The current component ----------------------------------
 const BasicTable = ({ rows }: BasicTableProps) => {
   const page = useAppSelector((state) => state.page.page);
   const rowsPerPage = useAppSelector((state) => state.rowsPerPage.rowsPerPage);
-  const totalRows = useAppSelector((state) => state.totalRows.totalRows);
+  const word = useAppSelector((state) => state.searchWord.word);
+
+  rows = rows?.filter((eachRow) =>
+    eachRow.name.toLowerCase().includes(word.toLowerCase())
+  );
+
   const dispatch = useAppDispatch();
 
   const handleChangePage = (
@@ -91,7 +97,7 @@ const BasicTable = ({ rows }: BasicTableProps) => {
                   100,
                   { label: "All", value: -1 },
                 ]}
-                count={totalRows}
+                count={rows?.length || 0}
                 colSpan={12}
                 rowsPerPage={rowsPerPage}
                 page={page}
