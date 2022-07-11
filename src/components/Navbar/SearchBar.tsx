@@ -7,7 +7,6 @@ import { Search } from "@mui/icons-material";
 // Test -------------------------- Structure of Props ----------------------------------
 
 // Test -------------------------- The current component ----------------------------------
-
 const SearchBar = () => {
   return (
     <Box sx={{ flex: 0.4 }}>
@@ -15,7 +14,12 @@ const SearchBar = () => {
         <InputBase
           fullWidth
           placeholder="Search..."
-          sx={{ pl: 1, backgroundColor: "white", color: "black" }}
+          sx={{
+            pl: 1,
+            backgroundColor: "white",
+            color: "black",
+            borderRadius: 1,
+          }}
         ></InputBase>
         <Divider
           sx={{
