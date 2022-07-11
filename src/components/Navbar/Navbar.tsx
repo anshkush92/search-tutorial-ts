@@ -1,5 +1,5 @@
 // Test -------------------------- Importing the Packages ---------------------------------
-import { Mail } from "@mui/icons-material";
+import { Mail, Search } from "@mui/icons-material";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import SettingsIcon from "@mui/icons-material/Settings";
@@ -13,6 +13,9 @@ import {
   Badge,
   IconButton,
   Avatar,
+  Paper,
+  InputBase,
+  Divider,
 } from "@mui/material";
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
 
@@ -28,12 +31,29 @@ const Navbar = () => {
   const isDarkMode = useAppSelector((state) => state.toggleMode.isDarkMode);
 
   return (
-    <Box display="flex" justifyContent="space-around">
+    <Box>
       <AppBar position="sticky">
-        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Toolbar
+          sx={{ display: "flex", justifyContent: "space-between", flex: 1 }}
+        >
           <Typography variant="body1">Logo</Typography>
 
-          <Box></Box>
+          <Box sx={{ flex: 0.4 }}>
+            <Paper sx={{ display: "flex" , backgroundColor: "white"}}>
+              <InputBase
+                fullWidth
+                placeholder="Search..."
+                sx={{ pl: 1, backgroundColor: "white", color: "black" }}
+              ></InputBase>
+              <Divider
+                sx={{ height: 28, mt: "auto", mb: "auto", backgroundColor: "black" }}
+                orientation="vertical"
+              />
+              <IconButton>
+                <Search color="primary"></Search>
+              </IconButton>
+            </Paper>
+          </Box>
 
           <Box display="flex" alignItems="center">
             <IconButton onClick={() => dispatch(toggleTheme())}>
