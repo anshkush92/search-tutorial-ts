@@ -6,7 +6,7 @@ import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import RemoveOutlinedIcon from "@mui/icons-material/RemoveOutlined";
 
 // Test -------------------------- Importing the styles / other components ----------------
-import { useAppDispatch } from "../../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import {
   increaseRows,
   decreaseRows,
@@ -18,6 +18,7 @@ import {
 const ChangeTotalRows = () => {
   const [changeBy, setChangeBy] = useState<string>("1");
   const dispatch = useAppDispatch();
+  const isDarkMode = useAppSelector((state) => state.toggleMode.isDarkMode);
 
   const increaseHandler = () => {
     toast.success("Increased Rows");
@@ -44,7 +45,7 @@ const ChangeTotalRows = () => {
         variant="outlined"
         disabled={isNaN(parseInt(changeBy)) || parseInt(changeBy) === 0}
         onClick={decreaseHandler}
-        sx={{ "&:disabled": { color: "red" } }}
+        sx={{ "&:disabled": { color: isDarkMode ? "red" : "default" } }}
         startIcon={<RemoveOutlinedIcon></RemoveOutlinedIcon>}
       >
         Decrease
@@ -60,7 +61,7 @@ const ChangeTotalRows = () => {
       ></TextField>
       <Button
         variant="outlined"
-        sx={{ "&:disabled": { color: "red" } }}
+        sx={{ "&:disabled": { color: isDarkMode ? "red" : "default" } }}
         disabled={isNaN(parseInt(changeBy)) || parseInt(changeBy) === 0}
         onClick={increaseHandler}
         endIcon={<AddOutlinedIcon></AddOutlinedIcon>}

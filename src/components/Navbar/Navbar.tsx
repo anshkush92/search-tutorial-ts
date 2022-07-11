@@ -14,14 +14,19 @@ import {
   IconButton,
   Avatar,
 } from "@mui/material";
+import { useAppSelector, useAppDispatch } from "../../app/hooks";
 
 // Test -------------------------- Importing the styles / other components ----------------
+import { toggleTheme } from "../../features/theme/changeTheme";
 
 // Test -------------------------- Structure of Props ----------------------------------
 
 // Test -------------------------- The current component ----------------------------------
 
 const Navbar = () => {
+  const dispatch = useAppDispatch();
+  const isDarkMode = useAppSelector((state) => state.toggleMode.isDarkMode);
+
   return (
     <Box display="flex" justifyContent="space-around">
       <AppBar position="sticky">
@@ -31,8 +36,12 @@ const Navbar = () => {
           <Box></Box>
 
           <Box display="flex" alignItems="center">
-            <IconButton>
-              <></>
+            <IconButton onClick={() => dispatch(toggleTheme())}>
+              {isDarkMode ? (
+                <DarkModeIcon sx={{ color: "white" }}></DarkModeIcon>
+              ) : (
+                <LightModeIcon sx={{ color: "white" }}></LightModeIcon>
+              )}
             </IconButton>
 
             <IconButton>

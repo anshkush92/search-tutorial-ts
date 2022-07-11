@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 // Test --------------------- Structure of the Slice --------------------
 const initialState = {
-  isDarkMode: true,
+  isDarkMode: false,
 };
 
 // Test --------------------- Creating the slice ------------------------
