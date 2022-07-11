@@ -20,6 +20,7 @@ export const totalRowsSlice = createSlice({
     },
     decreaseRows: (state, action: PayloadAction<number>) => {
       state.totalRows -= action.payload;
+      if (state.totalRows <= 0) state.totalRows = 0;
     },
   },
 });
