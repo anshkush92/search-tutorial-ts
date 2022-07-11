@@ -30,7 +30,7 @@ const BasicTable = ({ rows }: BasicTableProps) => {
   const rowsPerPage = useAppSelector((state) => state.rowsPerPage.rowsPerPage);
   const word = useAppSelector((state) => state.searchWord.word);
 
-  rows = rows?.filter(
+  const newRows = rows?.filter(
     (eachRow) =>
       eachRow.name.toLowerCase().includes(word.toLowerCase()) ||
       eachRow.email.toLowerCase().includes(word.toLowerCase()) ||
@@ -70,11 +70,11 @@ const BasicTable = ({ rows }: BasicTableProps) => {
 
           <TableBody>
             {(rowsPerPage > 0
-              ? rows?.slice(
+              ? newRows?.slice(
                   rowsPerPage * page,
                   rowsPerPage * page + rowsPerPage
                 )
-              : rows
+              : newRows
             )?.map((user) => (
               <StyledTableRow key={user.name}>
                 <StyledTableCell>{user.name}</StyledTableCell>
@@ -100,7 +100,7 @@ const BasicTable = ({ rows }: BasicTableProps) => {
                   100,
                   { label: "All", value: -1 },
                 ]}
-                count={rows?.length || 0}
+                count={newRows?.length || 0}
                 colSpan={12}
                 rowsPerPage={rowsPerPage}
                 page={page}
