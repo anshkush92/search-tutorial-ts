@@ -31,9 +31,6 @@ const useFakeData = () => {
       setUserData(tempData);
     };
     generateFakeData();
-    return () => {
-      console.log("Cleanup from fake.tsx");
-    };
   }, [totalRows]);
 
   return userData;

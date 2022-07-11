@@ -8,8 +8,6 @@ import "react-toastify/dist/ReactToastify.css";
 const App = () => {
   const userData = useFakeData();
 
-  console.log("App.tsx", userData);
-
   return (
     <div>
       <CurrentTotalRows></CurrentTotalRows>
