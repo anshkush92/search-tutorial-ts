@@ -21,6 +21,8 @@ const CurrentTotalRows = () => {
     >
       <TextField
         label="Current Total Rows"
+        sx={{input: {color: "black"}}}
+        focused
         variant="standard"
         value={totalRows}
         InputProps={{ readOnly: true }}

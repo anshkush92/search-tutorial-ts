@@ -44,19 +44,23 @@ const ChangeTotalRows = () => {
         variant="outlined"
         disabled={isNaN(parseInt(changeBy)) || parseInt(changeBy) === 0}
         onClick={decreaseHandler}
+        sx={{ "&:disabled": { color: "red" } }}
         startIcon={<RemoveOutlinedIcon></RemoveOutlinedIcon>}
       >
         Decrease
       </Button>
       <TextField
-        value={changeBy}
+        sx={{ input: { color: "black" } }}
+        focused
         variant="standard"
+        value={changeBy}
         label="Change By"
         helperText="Enter numbers only"
         onChange={(event) => setChangeBy(event?.target.value)}
       ></TextField>
       <Button
         variant="outlined"
+        sx={{ "&:disabled": { color: "red" } }}
         disabled={isNaN(parseInt(changeBy)) || parseInt(changeBy) === 0}
         onClick={increaseHandler}
         endIcon={<AddOutlinedIcon></AddOutlinedIcon>}

@@ -45,7 +45,7 @@ const BasicTable = ({ rows }: BasicTableProps) => {
   };
 
   return (
-    <Box width="90%" m="auto">
+    <Box width="90%" m="auto" mb={4}>
       <TableContainer component={Paper}>
         <Table>
           <TableHead>

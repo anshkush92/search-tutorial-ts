@@ -3,6 +3,7 @@ import counterReducer from "../features/counter/counterSlice";
 import pageReducer from "../features/pages/pageSlice";
 import rowsPerPageReducer from "../features/pages/rowsPerPageSlice";
 import totalRowsReducer from "../features/pages/totalRowsSlice";
+import toggleThemeReducer from "../features/theme/changeTheme";
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
     page: pageReducer,
     rowsPerPage: rowsPerPageReducer,
     totalRows: totalRowsReducer,
+    toggleMode: toggleThemeReducer,
   },
 });
 

@@ -3,3 +3,5 @@
 - [Material UI Table](https://mui.com/material-ui/react-table/#basic-table)
 - [Material UI Table Pagination](https://mui.com/material-ui/react-table/#custom-pagination-actions)
 - [Material UI Theme Customization](https://mui.com/material-ui/react-table/#customization)
+- [Dark / Light Mode](https://mui.com/material-ui/customization/dark-mode/#main-content)
+- [Change Text Field Input Colors](https://stackoverflow.com/questions/50228108/change-textfield-font-color-in-mui)
