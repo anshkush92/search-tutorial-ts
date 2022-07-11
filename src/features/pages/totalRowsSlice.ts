@@ -4,10 +4,12 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 // Test --------------------- Creating the slice ------------------------
 type totalRowsState = {
   totalRows: number;
+  previousTotalRows: number;
 };
 
 const initialState: totalRowsState = {
   totalRows: 10,
+  previousTotalRows: 0,
 };
 
 // Test --------------------- Exporting the actions ---------------------
@@ -21,9 +23,13 @@ export const totalRowsSlice = createSlice({
     decreaseRows: (state, action: PayloadAction<number>) => {
       state.totalRows -= action.payload;
     },
+    previousRows: (state) => {
+      state.previousTotalRows = state.totalRows;
+    },
   },
 });
 
 // Test --------------------- Exporting the Reducers Functions -------
-export const { increaseRows, decreaseRows } = totalRowsSlice.actions;
+export const { increaseRows, decreaseRows, previousRows } =
+  totalRowsSlice.actions;
 export default totalRowsSlice.reducer;

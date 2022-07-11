@@ -10,22 +10,25 @@ import { useAppDispatch } from "../../app/hooks";
 import {
   increaseRows,
   decreaseRows,
+  previousRows,
 } from "../../features/pages/totalRowsSlice";
 
 // Test -------------------------- Structure of Props ----------------------------------
 
 // Test -------------------------- The current component ----------------------------------
 const ChangeTotalRows = () => {
-  const [changeBy, setChangeBy] = useState<string>("0");
+  const [changeBy, setChangeBy] = useState<string>("1");
   const dispatch = useAppDispatch();
 
   const increaseHandler = () => {
     toast.success("Increased Rows");
+    dispatch(previousRows());
     dispatch(increaseRows(parseInt(changeBy)));
   };
 
   const decreaseHandler = () => {
     toast.success("Decreased Rows");
+    dispatch(previousRows());
     dispatch(decreaseRows(parseInt(changeBy)));
   };
 
@@ -42,7 +45,7 @@ const ChangeTotalRows = () => {
     >
       <Button
         variant="outlined"
-        disabled={isNaN(parseInt(changeBy))}
+        disabled={isNaN(parseInt(changeBy)) || parseInt(changeBy) === 0}
         onClick={decreaseHandler}
         startIcon={<RemoveOutlinedIcon></RemoveOutlinedIcon>}
       >
@@ -57,7 +60,7 @@ const ChangeTotalRows = () => {
       ></TextField>
       <Button
         variant="outlined"
-        disabled={isNaN(parseInt(changeBy))}
+        disabled={isNaN(parseInt(changeBy)) || parseInt(changeBy) === 0}
         onClick={increaseHandler}
         endIcon={<AddOutlinedIcon></AddOutlinedIcon>}
       >

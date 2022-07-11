@@ -10,10 +10,16 @@ import { UserDataType } from "../types/UserDataType.type";
 
 // Test -------------------------- The current component ----------------------------------
 const useFakeData = () => {
+  const previousTotalRows = useAppSelector(
+    (state) => state.totalRows.previousTotalRows
+  );
   const totalRows = useAppSelector((state) => state.totalRows.totalRows);
+
+  console.log(previousTotalRows, totalRows);
+
   const [userData, setUserData] = useState<UserDataType[]>([]);
 
-  const generateFakeData = async () => {
+  const generateFakeData = () => {
     let tempData: UserDataType[] = [];
 
     for (let i = 1; i <= totalRows; i++) {
