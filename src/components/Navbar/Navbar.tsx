@@ -1,33 +1,20 @@
 // Test -------------------------- Importing the Packages ---------------------------------
 import { Mail } from "@mui/icons-material";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
 import SettingsIcon from "@mui/icons-material/Settings";
-import LightModeIcon from "@mui/icons-material/LightMode";
 
-import {
-  AppBar,
-  Box,
-  Toolbar,
-  Typography,
-  IconButton,
-  Avatar,
-} from "@mui/material";
-import { useAppSelector, useAppDispatch } from "../../app/hooks";
+import { AppBar, Box, Toolbar, Typography, Avatar } from "@mui/material";
 
 // Test -------------------------- Importing the styles / other components ----------------
-import { toggleTheme } from "../../features/theme/changeTheme";
 import BadgeButton from "./BadgeButton";
 import SearchBar from "./SearchBar";
+import ToggleTheme from "./ToggleTheme";
 
 // Test -------------------------- Structure of Props ----------------------------------
 
 // Test -------------------------- The current component ----------------------------------
 
 const Navbar = () => {
-  const dispatch = useAppDispatch();
-  const isDarkMode = useAppSelector((state) => state.toggleMode.isDarkMode);
-
   return (
     <>
       <AppBar position="sticky">
@@ -39,13 +26,7 @@ const Navbar = () => {
           <SearchBar></SearchBar>
 
           <Box display="flex" alignItems="center">
-            <IconButton onClick={() => dispatch(toggleTheme())}>
-              {isDarkMode ? (
-                <DarkModeIcon sx={{ color: "white" }}></DarkModeIcon>
-              ) : (
-                <LightModeIcon sx={{ color: "white" }}></LightModeIcon>
-              )}
-            </IconButton>
+            <ToggleTheme />
 
             <BadgeButton
               title="Mail Notifications"
