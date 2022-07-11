@@ -4,6 +4,7 @@ import pageReducer from "../features/pages/pageSlice";
 import rowsPerPageReducer from "../features/pages/rowsPerPageSlice";
 import totalRowsReducer from "../features/pages/totalRowsSlice";
 import toggleThemeReducer from "../features/theme/changeTheme";
+import searchWordReducer from "../features/word/searchWordSlice";
 
 export const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
     rowsPerPage: rowsPerPageReducer,
     totalRows: totalRowsReducer,
     toggleMode: toggleThemeReducer,
+    searchWord: searchWordReducer,
   },
 });
 
