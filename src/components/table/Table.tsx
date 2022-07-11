@@ -30,8 +30,11 @@ const BasicTable = ({ rows }: BasicTableProps) => {
   const rowsPerPage = useAppSelector((state) => state.rowsPerPage.rowsPerPage);
   const word = useAppSelector((state) => state.searchWord.word);
 
-  rows = rows?.filter((eachRow) =>
-    eachRow.name.toLowerCase().includes(word.toLowerCase())
+  rows = rows?.filter(
+    (eachRow) =>
+      eachRow.name.toLowerCase().includes(word.toLowerCase()) ||
+      eachRow.email.toLowerCase().includes(word.toLowerCase()) ||
+      eachRow.country.toLowerCase().includes(word.toLowerCase())
   );
 
   const dispatch = useAppDispatch();
