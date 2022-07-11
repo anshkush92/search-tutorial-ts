@@ -20,12 +20,12 @@ const ChangeTotalRows = () => {
   const dispatch = useAppDispatch();
 
   const increaseHandler = () => {
-    toast("Increased Rows");
+    toast.success("Increased Rows");
     dispatch(increaseRows(parseInt(changeBy)));
   };
 
   const decreaseHandler = () => {
-    toast("Decreased Rows");
+    toast.success("Decreased Rows");
     dispatch(decreaseRows(parseInt(changeBy)));
   };
 
